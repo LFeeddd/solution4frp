@@ -13,13 +13,12 @@
 - [2. frp 文件下载与配置](#2-frp-文件下载与配置)
 - [3. 如何使用内网穿透](#3-如何使用内网穿透)
 - [4. 使用 NoMachine 远程连接服务器](#4-使用-nomachine-远程连接服务器)
-- [5. 常见问题](#5-常见问题)
 
 ---
 
 ## 1. 公网 IP 机器的购买与准备
 以阿里云为例购买服务器为例，每年有300块的学生优惠券，实测买最便宜的服务器可以白嫖半年
-![服务器](assets\阿里云服务器.png)
+![服务器](assets/阿里云服务器.png)
 
 ---
 
@@ -105,7 +104,7 @@ screen -S frpc ./frpc -c frpc.toml
 ---
 
 ## 3. 如何使用内网穿透
-首先要先把在frpc.toml中设置的remotePort在服务器的防火墙中允许访问![防火墙设置](assets\防火墙设置.png)
+首先要先把在frpc.toml中设置的remotePort在服务器的防火墙中允许访问![防火墙设置](assets/防火墙设置.png)
 
 ### 3.1 通过 SSH 连接实验室服务器
 
@@ -129,7 +128,7 @@ ssh qcxy@123.123.123.123 -p 6000
 
 ### 3.2 通过vscode的remote-ssh插件
 下载完插件按以下步骤即可连接
-![remote-ssh](assets\remote-ssh.png)
+![remote-ssh](assets/remote-ssh.png)
 
 ### ⚠️ 强烈建议
 1.在已连接的基础上进行免密连接设置，防止因为网络波动等原因掉线
@@ -175,7 +174,7 @@ ssh -N -L 14000:127.0.0.1:4000 用户名@公网服务器IP -p 6000
 
 然后 NoMachine 中：
 
-![NoMachine配置](assets\nomachine.png)
+![NoMachine配置](assets/nomachine.png)
 
 这种方式的链路为：
 
