@@ -1,0 +1,27 @@
+# 服务端地址（公网IP）
+serverAddr = "123.123.123.123"
+# 服务器端口（Frp 服务端监听的端口，不需要修改）
+serverPort = 7000
+
+# 连接协议
+transport.protocol = "tcp"
+
+# 认证方式
+auth.method = "token"
+# 认证所使用的 Token（要和你刚才配置的服务端token完全一样！）
+auth.token = "123-abc-123abc"
+
+# 代理配置
+[[proxies]]
+name = "ssha100" #随便起名
+# 代理类型（http、https、tcp等）
+# 这里要根据你的需求来填写，如果你有域名，就用http
+# 如果你没有域名，那就用IP直连，例如:165.0.0.1:8848,此时这里应该写tcp协议
+# 如果你用tcp协议就必须把刚才服务端上subDomainHost = "xxxx.com"的配置删除！
+type = "tcp"   # IP+端口直连用这个
+
+# 本地 IP（Frp 客户端需要将流量转发到的本地地址）
+localIP = "127.0.0.1"
+# 本地端口（Frp 客户端需要将流量转发到的本地端口，根据你要穿透的端口来填写）
+localPort = 22
+remotePort = 6000    # 这个端口随便改，但后续操作需要对应修改
