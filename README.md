@@ -49,9 +49,12 @@ cd frp_x.x.x_linux_amd64
 ### 2.3 服务器端配置
 对应的frps.toml仅需要做的就是自行修改auth.token关键字，相关请参考：[frps.toml](frp/frps.toml)
 
+其次要在防火墙开放7000端口号供客户端连接
+![服务器](assets/7000port.png)
 ```bash
 cd frps所在文件夹
-screen -S frps ./frps -c frps.toml 
+chmod +x frps
+sudo screen -S frps ./frps -c frps.toml 
 ```
 screen为额外工具，可以在关掉终端的前提下运行命令，不想下载这个工具执行
 ```bash
